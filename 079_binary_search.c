@@ -1,0 +1,2 @@
+#include <stdio.h>
+int main(void){int a[100],n,key,l=0,r;printf("Enter sorted array size (1-100): ");if(scanf("%d",&n)!=1||n<1||n>100)return 1;for(int i=0;i<n;i++)if(scanf("%d",&a[i])!=1)return 1;printf("Search value: ");if(scanf("%d",&key)!=1)return 1;r=n-1;while(l<=r){int m=l+(r-l)/2;if(a[m]==key){printf("Found at index %d\\n",m);return 0;}if(a[m]<key)l=m+1;else r=m-1;}puts("Not found");return 0;}

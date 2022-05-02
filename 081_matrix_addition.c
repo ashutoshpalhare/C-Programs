@@ -1,0 +1,2 @@
+#include <stdio.h>
+int main(void){int a[10][10],b[10][10],r,c;printf("Rows and columns (1-10): ");if(scanf("%d %d",&r,&c)!=2||r<1||r>10||c<1||c>10)return 1;puts("Enter first matrix:");for(int i=0;i<r;i++)for(int j=0;j<c;j++)if(scanf("%d",&a[i][j])!=1)return 1;puts("Enter second matrix:");for(int i=0;i<r;i++)for(int j=0;j<c;j++)if(scanf("%d",&b[i][j])!=1)return 1;puts("Sum:");for(int i=0;i<r;i++){for(int j=0;j<c;j++)printf("%d ",a[i][j]+b[i][j]);puts("");}return 0;}

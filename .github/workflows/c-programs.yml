@@ -1,0 +1,37 @@
+name: C Program Syntax Check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  syntax-check:
+    name: Check all C programs
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Verify program count
+        shell: bash
+        run: |
+          count=$(find . -maxdepth 1 -type f -name '*.c' | wc -l)
+          echo "Found $count C source files"
+          if [ "$count" -ne 100 ]; then
+            echo "::error::Expected exactly 100 C files, found $count"
+            exit 1
+          fi
+
+      - name: Run GCC syntax checks
+        shell: bash
+        run: |
+          while IFS= read -r file; do
+            echo "Checking $file"
+            gcc -std=c11 -Wall -Wextra -pedantic -fsyntax-only "$file"
+          done < <(find . -maxdepth 1 -type f -name '*.c' | sort)

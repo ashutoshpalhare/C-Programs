@@ -1,5 +1,7 @@
 # C-Programs
 
+[![C Program Syntax Check](https://github.com/ashutoshpalhare/C-Programs/actions/workflows/c-programs.yml/badge.svg)](https://github.com/ashutoshpalhare/C-Programs/actions/workflows/c-programs.yml)
+
 A collection of beginner-friendly C programs covering fundamentals, control flow, loops, arrays, strings, pointers, structures, and file handling.
 
 This repository contains 100 standalone C source files, each focusing on a specific programming concept or exercise. It is a great resource for learning C step by step and practicing problem-solving.
@@ -123,7 +125,6 @@ Compile any C file using GCC:
 ```bash
 gcc 001_hello_world.c -o hello_world
 ./hello_world
-
 ```
 
 ## Automated Checks

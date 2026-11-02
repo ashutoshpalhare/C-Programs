@@ -123,3 +123,19 @@ Compile any C file using GCC:
 ```bash
 gcc 001_hello_world.c -o hello_world
 ./hello_world
+
+```
+
+## Automated Checks
+
+Every pull request and push to `main` runs a GitHub Actions workflow that checks all 100 C files with GCC using the C11 standard and common warning flags.
+
+> This workflow performs syntax checks only. It does not execute programs or prove their runtime correctness.
+
+## Repository Structure
+
+All programs are kept in the repository root and use zero-padded numbering (`001`–`100`) so they remain easy to browse in order.
+
+## License
+
+No license is currently specified. Unless a license is added, others should not assume they have permission to reuse, modify, or distribute this code.
